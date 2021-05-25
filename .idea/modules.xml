@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/hieu.iml" filepath="$PROJECT_DIR$/hieu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baitap.iml" filepath="$PROJECT_DIR$/baitap.iml" />
     </modules>
   </component>
 </project>
