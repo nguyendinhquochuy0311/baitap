@@ -13,5 +13,6 @@ public class Fibonacci {
         for (int i = 0; i < n; i++) {
             a += b;
         }
+        System.out.println("a");
     }
 }
