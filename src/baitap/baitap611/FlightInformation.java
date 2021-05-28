@@ -1,10 +1,14 @@
 package baitap.baitap611;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class FlightInformation {
 
     private String flightCode;
 
-    private Long flightDate;
+    private Date flightDate;
 
     private Long flightTime;
 
@@ -23,20 +27,12 @@ public class FlightInformation {
         this.flightCode = flightCode;
     }
 
-    public Long getFlightDate() {
+    public void setFlightDate(Date flightDate) {
+        this.flightDate = flightDate;
+    }
+
+    public Date getFlightDate() {
         return flightDate;
-    }
-
-    public FlightInformation(String flightCode, Long flightDate, Long flightTime, String departure, String destination) {
-        this.flightCode = flightCode;
-        this.flightDate = flightDate;
-        this.flightTime = flightTime;
-        this.departure = departure;
-        this.destination = destination;
-    }
-
-    public void setFlightDate(Long flightDate) {
-        this.flightDate = flightDate;
     }
 
     public Long getFlightTime() {
