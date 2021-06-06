@@ -57,10 +57,6 @@ public class Common {
         return intNum;
     }
 
-    public static void main(String[] args) {
-
-    }
-
     public static boolean isNotBlank(String str) {
         if (str == null || str.equals("")) {
             System.out.println("retype");
