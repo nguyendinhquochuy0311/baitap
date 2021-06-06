@@ -14,7 +14,7 @@ public class BaiTap311And313 {
 
         do {
             columnNumberStr = scanner.nextLine();
-            checkType = isNumeric(columnNumberStr);
+            checkType = Common.isNumeric(columnNumberStr);
         } while (!checkType);
 
         int columnNumber = Integer.parseInt(columnNumberStr);
@@ -23,7 +23,7 @@ public class BaiTap311And313 {
         System.out.println("input count row");
         do {
             rowNumberStr = scanner.nextLine();
-            checkType = isNumeric(rowNumberStr);
+            checkType = Common.isNumeric(rowNumberStr);
         } while (!checkType);
 
         int rowNumber = Integer.parseInt(rowNumberStr);
@@ -39,7 +39,7 @@ public class BaiTap311And313 {
                 System.out.println("nhap gia tri cua toa do: [" + i + "],[" + j + "]: ");
                 do {
                     number = scanner.nextLine();
-                    checkNumber = isNumericData(number);
+                    checkNumber = Common.isNumericData(number);
 
                 } while (!checkNumber);
                 numberMatrix = Double.parseDouble(number);
@@ -54,39 +54,5 @@ public class BaiTap311And313 {
             }
             System.out.println();
         }
-    }
-
-    public static boolean isNumericData(String strNum) {
-
-        if (strNum == null) {
-            System.out.println("retype");
-            return false;
-        }
-        try {
-            double numberData = Double.parseDouble(strNum);
-        } catch (NumberFormatException nfe) {
-            System.out.println("retype");
-            return false;
-        }
-        return true;
-    }
-
-    public static boolean isNumeric(String strNum) {
-
-        if (strNum == null) {
-            System.out.println("reType");
-            return false;
-        }
-        try {
-            int number = Integer.parseInt(strNum);
-            if (number <= 0) {
-                System.out.println("reType");
-                return false;
-            }
-        } catch (NumberFormatException nfe) {
-            System.out.println("reType");
-            return false;
-        }
-        return true;
     }
 }
