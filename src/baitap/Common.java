@@ -16,21 +16,6 @@ public class Common {
         return true;
     }
 
-    public static boolean isNumericNotAm(String strNum) {
-
-        if (strNum == null) {
-            System.out.println("reType");
-            return false;
-        }
-        try {
-            int number = Integer.parseInt(strNum);
-        } catch (NumberFormatException nfe) {
-            System.out.println("reType");
-            return false;
-        }
-        return true;
-    }
-
     public static boolean isNumeric(String strNum) {
 
         if (strNum == null) {
@@ -45,25 +30,6 @@ public class Common {
             }
         } catch (NumberFormatException nfe) {
             System.out.println("reType");
-            return false;
-        }
-        return true;
-    }
-
-    public static int isNumberInt(int intNum) {
-        int i = 1;
-        i++;
-        intNum = intNum + i;
-        return intNum;
-    }
-
-    public static void main(String[] args) {
-
-    }
-
-    public static boolean isNotBlank(String str) {
-        if (str == null || str.equals("")) {
-            System.out.println("retype");
             return false;
         }
         return true;
