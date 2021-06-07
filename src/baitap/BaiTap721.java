@@ -7,12 +7,18 @@ public class BaiTap721 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("nhap n");
-        int n = scanner.nextInt();
+
+        boolean checkType;
+        String numberCheck;
+        do {
+            numberCheck = scanner.nextLine();
+            checkType = Common.isNumeric(numberCheck);
+        } while (!checkType);
+
+        int n = Integer.parseInt(numberCheck);
         double s = 0;
         for (int i = 1; i <= n; i++) {
             s += (double) 1 / i;
-            System.out.println(s);
-            System.out.println(i);
         }
         System.out.println(s);
 
