@@ -3,7 +3,7 @@ package baitap;
 import java.util.Scanner;
 
 public class BaiTap721 {
-    //    Bài 732: Tính S(n) = 1 + ½ + 1/3 + … + 1/n
+    //    Bài 721: Tính S(n) = 1 + ½ + 1/3 + … + 1/n
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("input number");
