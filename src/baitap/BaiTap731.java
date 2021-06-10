@@ -6,7 +6,6 @@ public class BaiTap731 {
     //    Bài 731: Tính S(n) = 1^2 + 2^2 + … + n^2
     public static void main(String[] args) {
 
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input number");
 
