@@ -8,7 +8,7 @@ public class BaiTap731 {
 
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("nhap n");
+        System.out.println("Input number");
 
         boolean checkType;
         String numberCheck;
@@ -18,11 +18,11 @@ public class BaiTap731 {
             checkType = Common.isNumeric(numberCheck);
         } while (!checkType);
 
-        int n = Integer.parseInt(numberCheck);
-        int s = 0;
-        for (int i = 1; i <= n; i++) {
-            s += Math.pow(i, 2);
+        int inputNumber = Integer.parseInt(numberCheck);
+        int sum = 0;
+        for (int i = 1; i <= inputNumber; i++) {
+            sum += Math.pow(i, 2);
         }
-        System.out.println(s);
+        System.out.println(sum);
     }
 }
