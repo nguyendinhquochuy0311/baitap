@@ -20,15 +20,21 @@ public class Fibonacci {
 
         int beforeNumber = 0;
         int afterNumber = 1;
-        int sumOfNumber;
+        int sumOfNumber = 0;
 
         for (int i = 0; i < inputNumber; i++) {
 
             sumOfNumber = beforeNumber + afterNumber;
+
+            if (sumOfNumber < 0) {
+                System.out.println("over limit");
+                return;
+            }
+
             System.out.println(sumOfNumber);
 
-            afterNumber = beforeNumber;
-            beforeNumber = sumOfNumber;
+            beforeNumber = afterNumber;
+            afterNumber = sumOfNumber;
 
         }
     }
