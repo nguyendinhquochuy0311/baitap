@@ -16,7 +16,7 @@ public class Common {
         return true;
     }
 
-    public static boolean isNumericNotAm(String strNum) {
+    public static boolean isNumericNotNegativeNumber(String strNum) {
 
         if (strNum == null) {
             System.out.println("value numeric require not null");
@@ -24,6 +24,25 @@ public class Common {
         }
         try {
             int number = Integer.parseInt(strNum);
+        } catch (NumberFormatException nfe) {
+            System.out.println("value numeric require is a positive integer");
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean isNumericNotZero(String strNum) {
+
+        if (strNum == null) {
+            System.out.println("value numeric require not null");
+            return false;
+        }
+        try {
+            int number = Integer.parseInt(strNum);
+            if (number == 0) {
+                System.out.println("value numeric require not zero");
+                return false;
+            }
         } catch (NumberFormatException nfe) {
             System.out.println("value numeric require is a positive integer");
             return false;
