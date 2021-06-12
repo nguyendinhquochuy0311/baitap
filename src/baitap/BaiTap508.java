@@ -6,33 +6,83 @@ public class BaiTap508 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("nhap phan so thu nhat");
 
-        System.out.println("nhap tu");
-        int a = scanner.nextInt();
-        System.out.println("nhap mau");
-        int b = scanner.nextInt();
+        System.out.println("input fraction first");
+        Fraction fractionFirst = createFraction(scanner);
 
-        System.out.println("nhap phan so thu hai");
+        System.out.println("===============");
 
-        System.out.println("nhap tu");
-        int c = scanner.nextInt();
-        System.out.println("nhap mau");
-        int d = scanner.nextInt();
+        System.out.println("input fraction second");
+        Fraction fractionSecond = createFraction(scanner);
 
-        if (b == 0 || d == 0) {
+        Fraction fraction = sumFraction(fractionFirst, fractionSecond);
+        System.out.println("before reduce: " + fraction);
 
-            System.out.println(" mau khong duoc bang 0");
+        fraction = reduceFraction(fraction);
+        System.out.println("after reduce: " + fraction);
 
-        } else {
+    }
 
-            double z = (double) a / b;
-            double q = (double) c / d;
+    public static Fraction reduceFraction(Fraction fraction) {
 
-            System.out.println(" tong cua 2 phan so la:" + (z + q));
-            System.out.println("Hieu cua 2 phan so la:" + (z - q));
-            System.out.println("Tich cua 2 phan so la:" + (z * q));
-            System.out.println("Thuong cua 2 phan so la:" + (z / q));
+        int numerator = fraction.getNumerator();
+        int denominator = fraction.getDenominator();
+
+        for (int i = numerator; i > 2; i--) {
+
+            if (numerator % i == 0 && denominator % i == 0) {
+                fraction.setNumerator(numerator / i);
+                fraction.setDenominator(denominator / i);
+                return fraction;
+            }
         }
+        return fraction;
+    }
+
+    public static Fraction sumFraction(Fraction fractionFirst, Fraction fractionSecond) {
+
+        int numeratorFirst = fractionFirst.getNumerator();
+        int denominatorFirst = fractionFirst.getDenominator();
+
+        int numeratorSecond = fractionSecond.getNumerator();
+        int denominatorSecond = fractionSecond.getDenominator();
+
+        int sumOfNumerator = (numeratorFirst * denominatorSecond) + (numeratorSecond * denominatorFirst);
+
+        int sumOfDenominator = denominatorFirst * denominatorSecond;
+
+        Fraction fraction = new Fraction();
+        fraction.setNumerator(sumOfNumerator);
+        fraction.setDenominator(sumOfDenominator);
+
+        return fraction;
+    }
+
+    public static Fraction createFraction(Scanner scanner) {
+
+        System.out.println("input numerator");
+
+        boolean checkType;
+        String checkNumber;
+
+        do {
+            checkNumber = scanner.nextLine();
+            checkType = Common.isNumericNotNegativeNumber(checkNumber);
+        } while (!checkType);
+
+        System.out.println("input denominator");
+
+        int numerator = Integer.parseInt(checkNumber);
+
+        do {
+            checkNumber = scanner.nextLine();
+            checkType = Common.isNumericNotZero(checkNumber);
+        } while (!checkType);
+
+        int denominator = Integer.parseInt(checkNumber);
+
+        Fraction fraction = new Fraction(numerator, denominator);
+
+        return fraction;
     }
 }
