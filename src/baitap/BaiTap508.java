@@ -10,6 +10,8 @@ public class BaiTap508 {
         System.out.println("input fraction first");
         Fraction fractionFirst = createFraction(scanner);
 
+
+
         System.out.println("===============");
 
         System.out.println("input fraction second");
